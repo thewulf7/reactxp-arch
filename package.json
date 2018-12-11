@@ -1,0 +1,54 @@
+{
+  "name": "reactxp-arch",
+  "version": "0.0.1",
+  "description": "Plugin for ReactXP that provides a various architectural additions",
+  "scripts": {
+    "tslint": "tslint -p tsconfig.json -r tslint.json --fix || true",
+    "prepare": "npm run build",
+    "clean:dist": "rimraf dist",
+    "build:es2015": "tsc -p tsconfig.json",
+    "build": "run-s clean:* tslint build:*",
+    "karma:single-run": "karma start --singleRun",
+    "karma:watch": "karma start",
+    "test": "run-s clean:* karma:single-run",
+    "test:watch": "run-s clean:* karma:watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thewulf7/reactxp-arch"
+  },
+  "keywords": [
+    "react-native",
+    "reactxp",
+    "react"
+  ],
+  "dependencies": {
+    "@types/lodash": "4.14.109",
+    "@types/node": "10.5.0",
+    "assert": "1.3.0",
+    "lodash": "4.17.10",
+    "reactxp-experimental-navigation": "1.0.14",
+    "rebound": "0.1.0",
+    "tslib": "^1.9.1"
+  },
+  "peerDependencies": {
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-native": "^0.55.0",
+    "react-native-windows": "^0.54.0",
+    "reactxp": "^1.3.0"
+  },
+  "devDependencies": {
+    "@types/react-native": "0.55.26",
+    "npm-run-all": "^4.1.5",
+    "reactxp": "^1.3.0",
+    "rimraf": "2.6.2",
+    "tslint": "5.10.0",
+    "typescript": "2.9.2"
+  },
+  "author": "Evgenii Utkin <evutkin@microsoft.com>",
+  "license": "MIT",
+  "types": "dist/web/Types.d.ts",
+  "module": "dist-es2015/index.js",
+  "main": "dist/index.js"
+}
